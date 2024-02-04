@@ -52,13 +52,13 @@ const Header = () => {
 
             <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="#" className=" d-flex align-items-center gap-1">
+                <Link to="/home" className=" d-flex align-items-center gap-1">
                   <i className="ri-login-circle-line" />
                   {' '}
                   Login
                 </Link>
 
-                <Link to="#" className=" d-flex align-items-center gap-1">
+                <Link to="/home" className=" d-flex align-items-center gap-1">
                   <i className="ri-user-line" />
                   {' '}
                   Register
@@ -120,7 +120,7 @@ const Header = () => {
               sm="0"
               className=" d-flex align-items-center justify-content-end "
             >
-              <button className="header__btn btn ">
+              <button className="header__btn btn" type="button">
                 <Link to="/contact">
                   <i className="ri-phone-line" />
                   {' '}
@@ -137,17 +137,32 @@ const Header = () => {
       <div className="main__navbar">
         <Container>
           <div className="navigation__wrapper d-flex align-items-center justify-content-between">
-            <span className="mobile__menu">
-              <i className="ri-menu-line" onClick={toggleMenu} />
+            <span className="mobile__menu" role="button" tabIndex={0} onClick={toggleMenu} onKeyDown={(event) => { if (event.key === 'Enter') { toggleMenu(); } }}>
+              <i
+                id="menuToggle"
+                className="ri-menu-line"
+                aria-label="Toggle Menu"
+              />
             </span>
 
-            <div className="navigation" ref={menuRef} onClick={toggleMenu}>
+            <div
+              className="navigation"
+              ref={menuRef}
+              onClick={toggleMenu}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  toggleMenu();
+                }
+              }}
+              role="button"
+              tabIndex={0}
+            >
               <div className="menu">
-                {navLinks.map((item, index) => (
+                {navLinks.map((item) => (
                   <NavLink
                     to={item.path}
-                    className={(navClass) => (navClass.isActive ? 'nav__active nav__item' : 'nav__item')}
-                    key={index}
+                    className="nav__item"
+                    key={item.path}
                   >
                     {item.display}
                   </NavLink>

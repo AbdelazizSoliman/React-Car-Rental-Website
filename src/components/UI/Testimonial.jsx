@@ -39,7 +39,17 @@ const Testimonial = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider
+      dots={settings.dots}
+      infinite={settings.infinite}
+      autoplay={settings.autoplay}
+      speed={settings.speed}
+      swipeToSlide={settings.swipeToSlide}
+      autoplaySpeed={settings.autoplaySpeed}
+      slidesToShow={settings.slidesToShow}
+      slidesToScroll={settings.slidesToScroll}
+      responsive={settings.responsive}
+    >
       <div className="testimonial py-4 px-3">
         <p className="section__description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni

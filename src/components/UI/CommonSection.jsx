@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Container } from 'reactstrap';
 import '../../styles/common-section.css';
 
@@ -9,5 +10,9 @@ const CommonSection = ({ title }) => (
     </Container>
   </section>
 );
+
+CommonSection.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default CommonSection;

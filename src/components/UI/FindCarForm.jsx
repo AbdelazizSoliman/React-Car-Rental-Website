@@ -33,7 +33,7 @@ const FindCarForm = () => (
       </FormGroup>
 
       <FormGroup className="form__group">
-        <button className="btn find__car-btn">Find Car</button>
+        <button className="btn find__car-btn" type="button">Find Car</button>
       </FormGroup>
     </div>
   </Form>

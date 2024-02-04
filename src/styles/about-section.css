@@ -11,9 +11,11 @@
   .about__section-content h2 {
     font-size: 1.5rem;
   }
+
   .about__section-item {
     column-gap: 3rem;
   }
+
   .about__section-item p {
     font-size: 0.6rem;
     margin-bottom: 0;

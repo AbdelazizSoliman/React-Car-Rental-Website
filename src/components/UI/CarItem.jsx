@@ -1,12 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types'; // Import PropTypes
 import { Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../../styles/car-item.css';
 
-const CarItem = (props) => {
+const CarItem = ({ item }) => {
   const {
     imgUrl, model, carName, automatic, speed, price,
-  } = props.item;
+  } = item;
 
   return (
     <Col lg="4" md="4" sm="6" className="mb-5">
@@ -43,17 +44,29 @@ const CarItem = (props) => {
             </span>
           </div>
 
-          <button className=" w-50 car__item-btn car__btn-rent">
+          <button className="w-50 car__item-btn car__btn-rent" type="button">
             <Link to={`/cars/${carName}`}>Rent</Link>
           </button>
 
-          <button className=" w-50 car__item-btn car__btn-details">
+          <button className="w-50 car__item-btn car__btn-details" type="button">
             <Link to={`/cars/${carName}`}>Details</Link>
           </button>
         </div>
       </div>
     </Col>
   );
+};
+
+// Define prop types for CarItem component
+CarItem.propTypes = {
+  item: PropTypes.shape({
+    imgUrl: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    carName: PropTypes.string.isRequired,
+    automatic: PropTypes.string.isRequired,
+    speed: PropTypes.string.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
 };
 
 export default CarItem;

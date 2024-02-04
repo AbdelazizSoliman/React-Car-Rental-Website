@@ -1,5 +1,5 @@
 .header__top {
-  padding: 10px 0px;
+  padding: 10px 0;
   background: #000d6b;
   color: #fff;
 }
@@ -34,22 +34,14 @@
   font-size: 0.9rem;
 }
 
-.header__top__right a:hover {
+.header__btn a {
+  display: flex;
+  align-items: center;
+  column-gap: 0.4rem;
+  text-decoration: none;
   color: #fff;
-}
-
-/* ============ header middle style =========== */
-
-.header__middle {
-  padding: 20px 0px;
-}
-
-.logo h1 a span {
-  font-size: 1.5rem;
-}
-
-.logo h1 a i {
-  font-size: 2.2rem;
+  justify-content: flex-end;
+  font-size: 0.9rem;
 }
 
 .logo h1 a {
@@ -58,13 +50,42 @@
   font-weight: 700;
 }
 
-.logo h1 {
-  line-height: 1.5rem;
+.header__top__right a:hover {
+  color: #fff;
+}
+
+/* ============ header middle style =========== */
+
+.header__middle {
+  padding: 20px 0;
+}
+
+.logo h1 a span {
+  font-size: 1.5rem;
+}
+
+.mobile__menu i {
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
 }
 
 .header__location span i {
   font-size: 2.2rem;
   color: #000d6b;
+}
+
+.search__box span i {
+  color: rgba(255, 255, 255, 0.555);
+  cursor: pointer;
+}
+
+.logo h1 a i {
+  font-size: 2.2rem;
+}
+
+.logo h1 {
+  line-height: 1.5rem;
 }
 
 .header__location-content h4 {
@@ -85,16 +106,6 @@
   border-radius: 5px;
 }
 
-.header__btn a {
-  display: flex;
-  align-items: center;
-  column-gap: 0.4rem;
-  text-decoration: none;
-  color: #fff;
-  justify-content: end;
-  font-size: 0.9rem;
-}
-
 .header__btn a:hover {
   color: #fff;
 }
@@ -102,14 +113,8 @@
 /* ================ main navbar styles =========== */
 
 .main__navbar {
-  padding: 15px 0px;
+  padding: 15px 0;
   background: #000d6b;
-}
-
-.mobile__menu i {
-  color: #fff;
-  font-size: 1.3rem;
-  cursor: pointer;
 }
 
 .mobile__menu {
@@ -151,10 +156,6 @@
 
 .search__box input::placeholder {
   font-size: 0.8rem;
-}
-.search__box span i {
-  color: rgba(255, 255, 255, 0.555);
-  cursor: pointer;
 }
 
 .nav__active {

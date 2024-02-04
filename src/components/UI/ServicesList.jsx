@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
 import '../../styles/services-list.css';
 import servicesData from '../../assets/data/serviceData';
@@ -23,5 +24,14 @@ const ServiceItem = ({ item }) => (
     </div>
   </Col>
 );
+
+ServiceItem.propTypes = {
+  item: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    icon: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    desc: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default ServicesList;

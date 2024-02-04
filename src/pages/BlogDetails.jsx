@@ -4,7 +4,7 @@ import {
 } from 'reactstrap';
 
 import { useParams, Link } from 'react-router-dom';
-import blogData from '../assets/data/blogData.js';
+import blogData from '../assets/data/blogData';
 import Helmet from '../components/Helmet/Helmet';
 
 import commentImg from '../assets/all-images/ava-1.jpg';

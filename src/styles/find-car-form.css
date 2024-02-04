@@ -1,5 +1,6 @@
 .find__cars-left {
-  background: linear-gradient(rgb(249, 168, 38, 0.9), rgb(249, 168, 38, 0.9)),
+  background:
+    linear-gradient(rgb(249, 168, 38, 0.9), rgb(249, 168, 38, 0.9)),
     url("../assets/all-images/toyota-offer-2.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -20,10 +21,10 @@
 .form__group input {
   border: 1px solid #7c8a972a;
   padding: 8px 12px;
-
   width: 100%;
   outline: none;
 }
+
 .form__group input::placeholder {
   color: #7c8a97;
 }

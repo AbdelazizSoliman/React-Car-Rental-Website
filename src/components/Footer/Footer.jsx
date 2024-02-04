@@ -66,8 +66,8 @@ const Footer = () => {
             <div className="mb-4">
               <h5 className="footer__link-title">Quick Links</h5>
               <ListGroup>
-                {quickLinks.map((item, index) => (
-                  <ListGroupItem key={index} className="p-0 mt-3 quick__link">
+                {quickLinks.map((item) => (
+                  <ListGroupItem key={item.id} className="p-0 mt-3 quick__link">
                     <Link to={item.path}>{item.display}</Link>
                   </ListGroupItem>
                 ))}

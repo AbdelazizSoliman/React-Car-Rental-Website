@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Col } from 'reactstrap';
 import '../../styles/blog-item.css';
 import { Link } from 'react-router-dom';
@@ -60,6 +61,17 @@ const BlogItem = ({ item }) => {
       </div>
     </Col>
   );
+};
+
+BlogItem.propTypes = {
+  item: PropTypes.shape({
+    imgUrl: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BlogList;
