@@ -1,21 +1,22 @@
-import React from "react";
-import { Col } from "reactstrap";
-import "../../styles/blog-item.css";
-import { Link } from "react-router-dom";
-import blogData from "../../assets/data/blogData";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Col } from 'reactstrap';
+import '../../styles/blog-item.css';
+import { Link } from 'react-router-dom';
+import blogData from '../../assets/data/blogData';
 
-const BlogList = () => {
-  return (
-    <>
-      {blogData.map((item) => (
-        <BlogItem item={item} key={item.id} />
-      ))}
-    </>
-  );
-};
+const BlogList = () => (
+  <>
+    {blogData.map((item) => (
+      <BlogItem item={item} key={item.id} />
+    ))}
+  </>
+);
 
 const BlogItem = ({ item }) => {
-  const { imgUrl, title, author, date, description, time } = item;
+  const {
+    imgUrl, title, author, date, description, time,
+  } = item;
 
   return (
     <Col lg="4" md="6" sm="6" className="mb-5">
@@ -37,16 +38,22 @@ const BlogItem = ({ item }) => {
 
           <div className="blog__time pt-3 mt-3 d-flex align-items-center justify-content-between">
             <span className="blog__author">
-              <i class="ri-user-line"></i> {author}
+              <i className="ri-user-line" />
+              {' '}
+              {author}
             </span>
 
             <div className=" d-flex align-items-center gap-3">
               <span className=" d-flex align-items-center gap-1 section__description">
-                <i class="ri-calendar-line"></i> {date}
+                <i className="ri-calendar-line" />
+                {' '}
+                {date}
               </span>
 
               <span className=" d-flex align-items-center gap-1 section__description">
-                <i class="ri-time-line"></i> {time}
+                <i className="ri-time-line" />
+                {' '}
+                {time}
               </span>
             </div>
           </div>
@@ -54,6 +61,17 @@ const BlogItem = ({ item }) => {
       </div>
     </Col>
   );
+};
+
+BlogItem.propTypes = {
+  item: PropTypes.shape({
+    imgUrl: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    author: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    time: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default BlogList;

@@ -1,59 +1,67 @@
-import React from "react";
-import { Container, Row, Col } from "reactstrap";
-import { Link, NavLink } from "react-router-dom";
-import "../../styles/header.css";
+import React, { useRef } from 'react';
 
-const navLinks= [
+import { Container, Row, Col } from 'reactstrap';
+import { Link, NavLink } from 'react-router-dom';
+import '../../styles/header.css';
+
+const navLinks = [
   {
     path: '/home',
-    display: 'Home'
+    display: 'Home',
   },
-
   {
     path: '/about',
-    display: 'About'
+    display: 'About',
   },
-
   {
     path: '/cars',
-    display: 'Cars'
+    display: 'Cars',
   },
 
   {
     path: '/blogs',
-    display: 'Blog'
+    display: 'Blog',
   },
-
   {
     path: '/contact',
-    display: 'Contact'
+    display: 'Contact',
   },
-]
+];
 
 const Header = () => {
+  const menuRef = useRef(null);
+
+  const toggleMenu = () => menuRef.current.classList.toggle('menu__active');
+
   return (
     <header className="header">
+      {/* ============ header top ============ */}
       <div className="header__top">
         <Container>
           <Row>
             <Col lg="6" md="6" sm="6">
               <div className="header__top__left">
-                <span>Need help?</span>
+                <span>Need Help?</span>
                 <span className="header__top__help">
-                  <i class="ri-phone-fill"></i> +201020635513
+                  <i className="ri-phone-fill" />
+                  {' '}
+                  +20-102-063-5513
                 </span>
               </div>
             </Col>
 
             <Col lg="6" md="6" sm="6">
               <div className="header__top__right d-flex align-items-center justify-content-end gap-3">
-                <Link to="#" className="d-flex align-items-center gap-1">
-                  {" "}
-                  <i class="ri-login-circle-line"></i>Login
+                <Link to="/home" className=" d-flex align-items-center gap-1">
+                  <i className="ri-login-circle-line" />
+                  {' '}
+                  Login
                 </Link>
-                <Link to="#">
-                  {" "}
-                  <i class="ri-user-line"></i>Register
+
+                <Link to="/home" className=" d-flex align-items-center gap-1">
+                  <i className="ri-user-line" />
+                  {' '}
+                  Register
                 </Link>
               </div>
             </Col>
@@ -61,16 +69,21 @@ const Header = () => {
         </Container>
       </div>
 
+      {/* =============== header middle =========== */}
       <div className="header__middle">
         <Container>
           <Row>
             <Col lg="4" md="3" sm="4">
               <div className="logo">
                 <h1>
-                  <Link to={"/home"} className="d-flex align-items-center gap-3">
-                    <i class="ri-car-line"></i>
+                  <Link to="/home" className=" d-flex align-items-center gap-2">
+                    <i className="ri-car-line" />
                     <span>
-                      Rent Car <br /> Service
+                      Rent Car
+                      {' '}
+                      <br />
+                      {' '}
+                      Service
                     </span>
                   </Link>
                 </h1>
@@ -78,33 +91,40 @@ const Header = () => {
             </Col>
 
             <Col lg="3" md="3" sm="4">
-              <div className="header-location d-flex align-items-center gap-2">
+              <div className="header__location d-flex align-items-center gap-2">
                 <span>
-                  <i class="ri-earth-line"></i>
+                  <i className="ri-earth-line" />
                 </span>
-                <div className="header-location-content">
+                <div className="header__location-content">
                   <h4>Egypt</h4>
-                  <h6>Assuit, Egypt</h6>
+                  <h6>Assuit City, Egypt</h6>
                 </div>
               </div>
             </Col>
 
             <Col lg="3" md="3" sm="4">
-              <div className="header-location d-flex align-items-center gap-2">
+              <div className="header__location d-flex align-items-center gap-2">
                 <span>
-                <i class="ri-time-line"></i>
+                  <i className="ri-time-line" />
                 </span>
-                <div className="header-location-content">
+                <div className="header__location-content">
                   <h4>Sunday to Friday</h4>
-                  <h6>10AM - 7PM</h6>
+                  <h6>10am - 7pm</h6>
                 </div>
               </div>
             </Col>
 
-            <Col lg="2" md="3" sm="0" className="d-flex align-items-center justify-content-end">
-              <button className="header__btn btn">
-                <Link to={'./contact'}>
-                <i class="ri-phone-line"></i> Request a call
+            <Col
+              lg="2"
+              md="3"
+              sm="0"
+              className=" d-flex align-items-center justify-content-end "
+            >
+              <button className="header__btn btn" type="button">
+                <Link to="/contact">
+                  <i className="ri-phone-line" />
+                  {' '}
+                  Request a call
                 </Link>
               </button>
             </Col>
@@ -112,32 +132,55 @@ const Header = () => {
         </Container>
       </div>
 
+      {/* ========== main navigation =========== */}
+
       <div className="main__navbar">
         <Container>
-          <div className="navigation_wrapper d-flex align-items-center justify-content-between">
-            <span className="mobile__menu">
-            <i class="ri-menu-line"></i>
+          <div className="navigation__wrapper d-flex align-items-center justify-content-between">
+            <span className="mobile__menu" role="button" tabIndex={0} onClick={toggleMenu} onKeyDown={(event) => { if (event.key === 'Enter') { toggleMenu(); } }}>
+              <i
+                id="menuToggle"
+                className="ri-menu-line"
+                aria-label="Toggle Menu"
+              />
             </span>
 
-            <div className="navigation">
-              <div className="menu">
-                {
-                  navLinks.map((item,index)=>(<NavLink to ={item.path} className={ navClass=>navClass.isActive?'nav__active nav__item':'nav__item'} key={index} > {item.display} 
-                  </NavLink>))
+            <div
+              className="navigation"
+              ref={menuRef}
+              onClick={toggleMenu}
+              onKeyDown={(event) => {
+                if (event.key === 'Enter') {
+                  toggleMenu();
                 }
+              }}
+              role="button"
+              tabIndex={0}
+            >
+              <div className="menu">
+                {navLinks.map((item) => (
+                  <NavLink
+                    to={item.path}
+                    className="nav__item"
+                    key={item.path}
+                  >
+                    {item.display}
+                  </NavLink>
+                ))}
               </div>
             </div>
+
             <div className="nav__right">
               <div className="search__box">
-                <input type="text" placeholder="Search"/>
-                <span><i class="ri-search-line"></i></span>
+                <input type="text" placeholder="Search" />
+                <span>
+                  <i className="ri-search-line" />
+                </span>
               </div>
             </div>
           </div>
         </Container>
       </div>
-
-
     </header>
   );
 };

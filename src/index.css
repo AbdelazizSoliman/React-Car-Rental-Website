@@ -61,7 +61,7 @@ ul {
 }
 
 section {
-  padding: 50px 0px;
+  padding: 50px 0;
 }
 
 .btn {
@@ -81,7 +81,7 @@ section {
 
 @media only screen and (max-width: 768px) {
   section {
-    padding: 30px 0px;
+    padding: 30px 0;
   }
 
   .section__title {

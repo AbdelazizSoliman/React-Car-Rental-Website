@@ -14,7 +14,7 @@
   border: none;
   outline: none;
   background: #000d6b;
-  padding: 8px 0px;
+  padding: 8px 0;
 }
 
 .car__item-btn a {
@@ -26,13 +26,14 @@
 .car__item-btn a:hover {
   color: #fff;
 }
+
 .car__btn-details {
   background: #f9a826;
-  border-radius: 0px 4px 4px 0px;
+  border-radius: 0 4px 4px 0;
 }
 
 .car__btn-rent {
-  border-radius: 4px 0px 0px 4px;
+  border-radius: 4px 0 0 4px;
 }
 
 .car__item-content h4 {

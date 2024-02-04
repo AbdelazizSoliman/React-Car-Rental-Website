@@ -1,12 +1,12 @@
-import React from "react";
-import Slider from "react-slick";
+import React from 'react';
+import Slider from 'react-slick';
 
-import "../../styles/testimonial.css";
+import '../../styles/testimonial.css';
 
-import ava01 from "../../assets/all-images/ava-1.jpg";
-import ava02 from "../../assets/all-images/ava-2.jpg";
-import ava03 from "../../assets/all-images/ava-3.jpg";
-import ava04 from "../../assets/all-images/ava-4.jpg";
+import ava01 from '../../assets/all-images/ava-1.jpg';
+import ava02 from '../../assets/all-images/ava-2.jpg';
+import ava03 from '../../assets/all-images/ava-3.jpg';
+import ava04 from '../../assets/all-images/ava-4.jpg';
 
 const Testimonial = () => {
   const settings = {
@@ -39,7 +39,17 @@ const Testimonial = () => {
   };
 
   return (
-    <Slider {...settings}>
+    <Slider
+      dots={settings.dots}
+      infinite={settings.infinite}
+      autoplay={settings.autoplay}
+      speed={settings.speed}
+      swipeToSlide={settings.swipeToSlide}
+      autoplaySpeed={settings.autoplaySpeed}
+      slidesToShow={settings.slidesToShow}
+      slidesToScroll={settings.slidesToScroll}
+      responsive={settings.responsive}
+    >
       <div className="testimonial py-4 px-3">
         <p className="section__description">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus magni
