@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
 
-import carData from "../assets/data/carData";
-import { Container, Row, Col } from "reactstrap";
-import Helmet from "../components/Helmet/Helmet";
-import { useParams } from "react-router-dom";
-import BookingForm from "../components/UI/BookingForm";
-import PaymentMethod from "../components/UI/PaymentMethod";
+import { Container, Row, Col } from 'reactstrap';
+import { useParams } from 'react-router-dom';
+import carData from '../assets/data/carData';
+import Helmet from '../components/Helmet/Helmet';
+import BookingForm from '../components/UI/BookingForm';
+import PaymentMethod from '../components/UI/PaymentMethod';
 
 const CarDetails = () => {
   const { slug } = useParams();
@@ -31,18 +31,23 @@ const CarDetails = () => {
 
                 <div className=" d-flex align-items-center gap-5 mb-4 mt-3">
                   <h6 className="rent__price fw-bold fs-4">
-                    ${singleCarItem.price}.00 / Day
+                    $
+                    {singleCarItem.price}
+                    .00 / Day
                   </h6>
 
                   <span className=" d-flex align-items-center gap-2">
-                    <span style={{ color: "#f9a826" }}>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
+                    <span style={{ color: '#f9a826' }}>
+                      <i className="ri-star-s-fill" />
+                      <i className="ri-star-s-fill" />
+                      <i className="ri-star-s-fill" />
+                      <i className="ri-star-s-fill" />
+                      <i className="ri-star-s-fill" />
                     </span>
-                    ({singleCarItem.rating} ratings)
+                    (
+                    {singleCarItem.rating}
+                    {' '}
+                    ratings)
                   </span>
                 </div>
 
@@ -52,55 +57,61 @@ const CarDetails = () => {
 
                 <div
                   className=" d-flex align-items-center mt-3"
-                  style={{ columnGap: "4rem" }}
+                  style={{ columnGap: '4rem' }}
                 >
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-roadster-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
+                      className="ri-roadster-line"
+                      style={{ color: '#f9a826' }}
+                    />
+                    {' '}
                     {singleCarItem.model}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-settings-2-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
+                      className="ri-settings-2-line"
+                      style={{ color: '#f9a826' }}
+                    />
+                    {' '}
                     {singleCarItem.automatic}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-timer-flash-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
+                      className="ri-timer-flash-line"
+                      style={{ color: '#f9a826' }}
+                    />
+                    {' '}
                     {singleCarItem.speed}
                   </span>
                 </div>
 
                 <div
                   className=" d-flex align-items-center mt-3"
-                  style={{ columnGap: "2.8rem" }}
+                  style={{ columnGap: '2.8rem' }}
                 >
                   <span className=" d-flex align-items-center gap-1 section__description">
-                    <i class="ri-map-pin-line" style={{ color: "#f9a826" }}></i>{" "}
+                    <i className="ri-map-pin-line" style={{ color: '#f9a826' }} />
+                    {' '}
                     {singleCarItem.gps}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-wheelchair-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
+                      className="ri-wheelchair-line"
+                      style={{ color: '#f9a826' }}
+                    />
+                    {' '}
                     {singleCarItem.seatType}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
-                      class="ri-building-2-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
+                      className="ri-building-2-line"
+                      style={{ color: '#f9a826' }}
+                    />
+                    {' '}
                     {singleCarItem.brand}
                   </span>
                 </div>

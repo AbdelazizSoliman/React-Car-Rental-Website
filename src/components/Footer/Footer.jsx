@@ -1,32 +1,34 @@
-import React from "react";
+import React from 'react';
 
-import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import { Link } from "react-router-dom";
-import "../../styles/footer.css";
+import {
+  Container, Row, Col, ListGroup, ListGroupItem,
+} from 'reactstrap';
+import { Link } from 'react-router-dom';
+import '../../styles/footer.css';
 
 const quickLinks = [
   {
-    path: "/about",
-    display: "About",
+    path: '/about',
+    display: 'About',
   },
 
   {
-    path: "#",
-    display: "Privacy Policy",
+    path: '#',
+    display: 'Privacy Policy',
   },
 
   {
-    path: "/cars",
-    display: "Car Listing",
+    path: '/cars',
+    display: 'Car Listing',
   },
   {
-    path: "/blogs",
-    display: "Blog",
+    path: '/blogs',
+    display: 'Blog',
   },
 
   {
-    path: "/contact",
-    display: "Contact",
+    path: '/contact',
+    display: 'Contact',
   },
 ];
 
@@ -41,9 +43,13 @@ const Footer = () => {
             <div className="logo footer__logo">
               <h1>
                 <Link to="/home" className=" d-flex align-items-center gap-2">
-                  <i class="ri-car-line"></i>
+                  <i className="ri-car-line" />
                   <span>
-                    Rent Car <br /> Service
+                    Rent Car
+                    {' '}
+                    <br />
+                    {' '}
+                    Service
                   </span>
                 </Link>
               </h1>
@@ -88,7 +94,7 @@ const Footer = () => {
               <div className="newsletter">
                 <input type="email" placeholder="Email" />
                 <span>
-                  <i class="ri-send-plane-line"></i>
+                  <i className="ri-send-plane-line" />
                 </span>
               </div>
             </div>
@@ -97,8 +103,12 @@ const Footer = () => {
           <Col lg="12">
             <div className="footer__bottom">
               <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
-                <i class="ri-copyright-line"></i>Copyright {year}, Developed by
-               Abdelaziz Soliman. All rights reserved.
+                <i className="ri-copyright-line" />
+                Copyright
+                {' '}
+                {year}
+                , Developed by
+                Abdelaziz Soliman. All rights reserved.
               </p>
             </div>
           </Col>
