@@ -19,7 +19,6 @@ const quickLinks = [
     path: "/cars",
     display: "Car Listing",
   },
-
   {
     path: "/blogs",
     display: "Blog",
@@ -32,9 +31,8 @@ const quickLinks = [
 ];
 
 const Footer = () => {
-
   const date = new Date();
-  const year = date.getFullYear(); 
+  const year = date.getFullYear();
   return (
     <footer className="footer">
       <Container>
@@ -42,7 +40,7 @@ const Footer = () => {
           <Col lg="4" md="4" sm="12">
             <div className="logo footer__logo">
               <h1>
-                <Link to={"/home"} className="d-flex align-items-center gap-3">
+                <Link to="/home" className=" d-flex align-items-center gap-2">
                   <i class="ri-car-line"></i>
                   <span>
                     Rent Car <br /> Service
@@ -50,12 +48,11 @@ const Footer = () => {
                 </Link>
               </h1>
             </div>
-
             <p className="footer__logo-content">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt
-              ipsum temporibus cumque veritatis laboriosam, exercitationem ipsa
-              dolore repellendus architecto harum vero tempora. Aut
-              perspiciatis, placeat debitis ea velit explicabo! Eveniet!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Consequuntur, distinctio, itaque reiciendis ab cupiditate harum ex
+              quam veniam, omnis expedita animi quibusdam obcaecati mollitia?
+              Delectus et ad illo recusandae temporibus?
             </p>
           </Col>
 
@@ -64,46 +61,47 @@ const Footer = () => {
               <h5 className="footer__link-title">Quick Links</h5>
               <ListGroup>
                 {quickLinks.map((item, index) => (
-                  <ListGroupItem key={index} className="p-0 mt-3 quick__Link">
+                  <ListGroupItem key={index} className="p-0 mt-3 quick__link">
                     <Link to={item.path}>{item.display}</Link>
                   </ListGroupItem>
                 ))}
               </ListGroup>
             </div>
           </Col>
-          
-          <Col lg='3' md='4' sm='6'>
+
+          <Col lg="3" md="4" sm="6">
             <div className="mb-4">
-              <h5 className="footer__Link-title mb-4">Head Office</h5>
-              <p className="office__info">123 Yosry Ragheb, Assuit , Egypt</p>
-              <p className="office__info">Phone: +20102063513</p>
+              <h5 className="footer__link-title mb-4">Head Office</h5>
+              <p className="office__info">123 Yosry Ragheb, Assuit, Egypt</p>
+              <p className="office__info">Phone: +0995345875365</p>
+
               <p className="office__info">Email: abdelaziz.soliman89@gmail.com</p>
-              <p className="office__info">Office Time: 10AM - 6PM</p>
+
+              <p className="office__info">Office Time: 10am - 7pm</p>
             </div>
           </Col>
 
-          <Col lg='3' md='4'>
+          <Col lg="3" md="4" sm="12">
             <div className="mb-4">
-               <h5 className="footer__Link-title">NewsLetter</h5>
-               <p className="section__description">Subscribe our NewsLetter</p>
-               <div className="newsletter">
+              <h5 className="footer__link-title">Newsletter</h5>
+              <p className="section__description">Subscribe our newsletter</p>
+              <div className="newsletter">
                 <input type="email" placeholder="Email" />
                 <span>
-                <i class="ri-send-plane-line"></i>
+                  <i class="ri-send-plane-line"></i>
                 </span>
-               </div>
+              </div>
             </div>
           </Col>
 
-          <Col lg='12'>
+          <Col lg="12">
             <div className="footer__bottom">
-              <p className="section__description d-flex align-items-center justify-content-center gap-1 ">
-              <i class="ri-copyright-line">Copyrigh {year}, Developed by Abdelaziz Soliman. 
-                All rights reserved</i>
+              <p className="section__description d-flex align-items-center justify-content-center gap-1 pt-4">
+                <i class="ri-copyright-line"></i>Copyright {year}, Developed by
+               Abdelaziz Soliman. All rights reserved.
               </p>
             </div>
           </Col>
-
         </Row>
       </Container>
     </footer>
